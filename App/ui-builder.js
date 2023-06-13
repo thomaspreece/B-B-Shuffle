@@ -13,6 +13,21 @@ function customtoggle() {
   }
 }
 
+function customtitlestoggle() {
+    var elements = Array.from(document.getElementsByClassName("textarea-cardtitle"));
+    console.log(elements)
+    elements.forEach((x) => {
+        x.classList.toggle("textarea-card-shown");
+    })
+}
+
+function customdesctoggle() {
+    var elements = Array.from(document.getElementsByClassName("textarea-carddesc"));
+    elements.forEach((x) => {
+        x.classList.toggle("textarea-card-shown");
+    })
+}
+
 menus = ["ic","pv","c2","ps","proc","start"]
 
 function boxtoggle(a) {

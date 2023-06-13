@@ -19,6 +19,7 @@
             <input type="radio" id="corev1" name="deck" value="CoreV1" ><label for="corev1">CoreV1</label><br>
             <input type="radio" id="corev21" name="deck" value="CoreV21" ><label for="corev21">CoreV2.1</label><br>
             <input type="radio" id="icsotV1" name="deck" value="ICSOT" ><label for="icsotV1">ICS/OTv1</label><br>
+            <input type="radio" id="aws" name="deck" value="AWS" ><label for="aws">AWS</label><br>
             <br>
         <button type="submit" class="btn" >Submit</button>
         <button type="button" class="btn cancel" onclick="closedeckselector()">Close Deck Selector</button>
@@ -50,7 +51,9 @@
    <div id="dm_scenario" style="display:none;">
        Scenario Tools:
         <button onClick="rando()">Random</button>
-        <button onClick="customtoggle()">Custom</button> |
+        <button onClick="customtoggle()">Custom</button>
+        <button onClick="customtitlestoggle()">Manual Titles</button> 
+        <button onClick="customdesctoggle()">Manual Descriptions</button> |
         <button onclick="flipBack()"> Flip Scenario</button>
         <button onClick='window.location.href=window.location.href'>Refresh Page</button>
    </div>
@@ -88,7 +91,10 @@
 
         </div>
         <div class="cards__back">
-          <div class='init' id="a">
+          <div class='init'>
+            <textarea class='textarea-cardtitle' style='position: absolute; width: 290px; height: 25px; top: 40px; left: 45px;'></textarea>
+            <textarea class='textarea-carddesc' style='position: absolute; width: 290px; height: 175px; top: 75px; left: 45px;'></textarea>
+            <div id="a"></div>
           </div>
 
         </div>
@@ -99,8 +105,10 @@
 
         </div>
         <div class="cards__back">
-          <div class='init' id="b">
-
+          <div class='init'>
+            <textarea class='textarea-cardtitle' style='position: absolute; width: 290px; height: 25px; top: 40px; left: 45px;'></textarea>
+            <textarea class='textarea-carddesc' style='position: absolute; width: 290px; height: 175px; top: 75px; left: 45px;'></textarea>
+            <div id="b"></div>
           </div>
         </div>
       </div>
@@ -111,7 +119,10 @@
 
         </div>
         <div class="cards__back">
-          <div class='init' id="c">
+          <div class='init'>
+            <textarea class='textarea-cardtitle' style='position: absolute; width: 290px; height: 25px; top: 40px; left: 45px;'></textarea>
+            <textarea class='textarea-carddesc' style='position: absolute; width: 290px; height: 175px; top: 75px; left: 45px;'></textarea>
+            <div id="c"></div>
           </div>
         </div>
       </div>
@@ -122,8 +133,10 @@
 
         </div>
         <div class="cards__back">
-          <div class='init' id="d">
-
+          <div class='init'>
+            <textarea class='textarea-cardtitle' style='position: absolute; width: 290px; height: 25px; top: 40px; left: 45px;'></textarea>
+            <textarea class='textarea-carddesc' style='position: absolute; width: 290px; height: 175px; top: 75px; left: 45px;'></textarea>
+            <div id="d"></div>
           </div>
         </div>
       </div>
@@ -143,6 +156,9 @@ Established Procedures:
     <div style="clear:both; margin-bottom:10px;"></div>
 Other Procedures: 
     <div class="otherprocs" id="remainder"></div>
+    <div style="clear:both; margin-bottom:20px;"></div>
+Logistical Procedures: 
+    <div class="staticprocs" id="static-output"></div>    
 </center>
 <div style="clear:both; margin-bottom:10px;"></div>
 

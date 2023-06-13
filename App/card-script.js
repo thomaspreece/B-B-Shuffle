@@ -17,6 +17,12 @@ function rando() {
         document.getElementById("output").innerHTML = proc.slice(0, 4).join("");
         document.getElementById("remainder").innerHTML = proc.slice(4, 12).join("");
 
+        shuffle(staticproc)
+        document.getElementById("static-output").innerHTML = staticproc.join("");
+
+        console.log("rando")
+        console.log(staticproc.join(""))
+
         shuffle(init);
         document.getElementById("a").innerHTML = init.slice(0,1);
         document.getElementById("dma").innerHTML = init.slice(0,1);
@@ -88,6 +94,7 @@ function rem_ins() {
 var cardlist;
 
 var proc = []
+var staticproc = []
 var init = []
 var pivot = []
 var c2 = []
@@ -109,7 +116,7 @@ loaddeck();
 
 
  //BUILD LISTS
- cardtype = ["proc", "init", "pivot", "c2", "persist", "ins"];
+ cardtype = ["proc", "staticproc", "init", "pivot", "c2", "persist", "ins"];
  cardtype.forEach(buildlist);
 
   function buildlist(item, i) {
@@ -125,6 +132,15 @@ loaddeck();
                    }
                 proc.push(li);
                }
+            if (item=="staticproc" && x.type=="staticprocedure") {
+                c ="procimg"
+                if (x.details==null){
+                     li = "<div class='proc' id='"+x.id+"'><a href='"+x.image+"' data-lightbox='procedure"+x.id+"'><img class='"+c+"' src='"+x.image+"'></a></div>"
+                   } else {
+                     li = "<div class='proc' id='"+x.id+"'><a href='"+x.image+"' data-lightbox='procedure"+x.id+"' data-title='"+x.details+"'><img class='"+c+"' src='"+x.image+"'></a></div>"
+                   }
+                staticproc.push(li);
+               }               
             if (item=="ins" && x.type=="inject") {
                 c="inject"
                 if (x.details==null){
@@ -151,7 +167,7 @@ loaddeck();
                    } else {
                      li = "<a href='"+x.image+"' data-lightbox='pivot"+x.id+"' data-title='"+x.details+"'><img class='"+c+"' src='"+x.image+"'></a>"
                    }
-                pivot.push(li)
+                pivot.push(li)             
                 }
             if (item=="c2" && x.type=="c2") {
                 c="scenimg"
@@ -161,6 +177,7 @@ loaddeck();
                      li = "<a href='"+x.image+"' data-lightbox='c2"+x.id+"' data-title='"+x.details+"'><img class='"+c+"' src='"+x.image+"'></a>"
                    }
                 c2.push(li)
+                               
                 }
             if (item=="persist" && x.type=="persist") {
                 c="scenimg"
@@ -169,7 +186,7 @@ loaddeck();
                   } else {
                     li = "<a href='"+x.image+"' data-lightbox='persist"+x.id+"' data-title='"+x.details+"'><img class='"+c+"' src='"+x.image+"'></a>"
                   }
-                persist.push(li)
+                persist.push(li)             
                 }
 
             });

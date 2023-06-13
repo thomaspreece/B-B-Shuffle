@@ -37,6 +37,9 @@ console.log(selecteddeck);
     if (selecteddeck == 'ICSOT'){
         cardlist = 'decks/ICS-OT/carddb.json'
         }
+    if (selecteddeck == 'AWS'){
+        cardlist = 'decks/AWS/carddb.json'
+        }
 
         $.getJSON(cardlist, function(h) {
             $(a).html("<img class='full' src='"+h.red+"'>");

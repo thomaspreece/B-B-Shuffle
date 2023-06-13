@@ -55,7 +55,6 @@ border-radius: 16px;
   padding:10px;
 width:200px;
 }
-}
 
 #dm_solution img {
 max-width:250px;
@@ -223,6 +222,10 @@ li {
   width:150px;
 }
 
+#mydiv{
+  top: 370px; left: 1400px;
+}
+
 #initinject{
   /*right:50%;*/
   right:60px;
@@ -328,11 +331,11 @@ margin-bottom:5px;
 width:300px;
 }
 
-.otherprocs .procimg
+.otherprocs .procimg, .staticprocs .procimg
 {
 width:220px;
 }
-.otherprocs .proc
+.otherprocs .proc, .staticprocs .proc
 {
   height:125px;
 }
@@ -411,7 +414,7 @@ width: 75px;
     -webkit-border-radius: 60px;
     border-radius: 60px;
     top:825px;
-    left:520px;
+    left:620px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 
@@ -428,7 +431,7 @@ width: 75px;
     -webkit-border-radius: 60px;
     border-radius: 60px;
     top:925px;
-    left:520px;
+    left:620px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 .counter
@@ -458,4 +461,13 @@ width: 75px;
 padding:10px;
 margin:10px;
 background-color:#FF3333;
+}
+
+
+.textarea-cardtitle, .textarea-carddesc {
+  display: none;
+}
+
+.textarea-card-shown {
+  display: block;
 }
